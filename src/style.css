@@ -9,7 +9,24 @@
 body {
     font-family: 'Ubuntu', sans-serif;
 }
-
+.flavourPrice{
+    justify-content: center;
+    align-items: center;
+}
+.bill1{
+    margin:10px;
+    padding:10px;
+    line-height: px;
+}
+#billGeneration{
+    border:15px solid #ffd058; 
+    color:white;
+    margin-left: 550px;
+    margin-top:80px;
+    height:250px;
+    width:200px;
+    left:1100px;
+}
 
 
 .header {
@@ -223,7 +240,7 @@ body {
     line-height: 42px;
 }
 .footers{
-	position: absolute;
+	position: fixed;
 	top: 750px;
 	margin-left: 80px;
 	font-size: 18px;

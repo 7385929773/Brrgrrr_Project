@@ -1,14 +1,8 @@
 // Write your code on this file. Please don't change the existing code
 // unless absolutely needed.
-
 //Initial price of the burger
 var wholeWheatBun = 10;
-var Patty1  = 45;
-var Cheese1 = 67;
-var Tomatoes1  = 32;
-var Onions1  = 23;
-var Lettuce1 = 10;
-
+var Total=0;
 //Ingredients of the burger along with the price
 // Clue: the name is same as the textcontent of the button. Will be useful later on :)
 var ingredients = {
@@ -45,9 +39,11 @@ function renderPatty() {
   //you can also use getElementById
   if (state.Patty) {
     patty.style.display = "inherit";
-  } else {
-    patty.style.display = "none";
   }
+    else{
+    patty.style.display = "none";}
+  // document.getElementById("total").innerHTML = "Total = " +(Total = Total-80); 
+  
 }
 
 function renderCheese() {
@@ -55,8 +51,11 @@ function renderCheese() {
   //Trial 1 - Change the visibility of cheese based on state by manipulating the DOM
   if (state.Cheese) {
     cheese.style.display = "inherit";
-  } else {
+  //document.getElementById("total").innerHTML = "Total = " +(Total = Total+10); 
+} else {
     cheese.style.display = "none";
+  //document.getElementById("total").innerHTML = "Total = " +(Total = Total-10); 
+
   }
 
 }
@@ -94,18 +93,33 @@ function renderLettuce() {
 
 document.querySelector(".btn-patty").onclick = function () {
   state.Patty = !state.Patty;
-
+  if(patty.style.display ==="none")
+  {
+   document.getElementById("Patty").innerHTML = "Patty.................80 Rs"
+   document.getElementById("total").innerHTML = "Total = " +(Total = Total+80); 
+   document.getElementById("Payment").innerHTML = "Total = " +Total;
+  }
   renderAll();
 };
 
 // Trial 2 - Setup event listener for the cheese button
 document.querySelector(".btn-cheese").onclick = function () {
   state.Cheese = !state.Cheese;
+  if(cheese.style.display ==="none"){
+  document.getElementById("Cheese").innerHTML = "Cheese.................10 Rs"
+  document.getElementById("total").innerHTML = "Total = " +(Total = Total+10); 
+  document.getElementById("Payment").innerHTML = "Total = " +Total;
+  }
   renderAll();
 };
 // Trial 2 - Setup event listener for the tomatoes button
 document.querySelector(".btn-tomatoes").onclick = function () {
   state.Tomatoes = !state.Tomatoes;
+  if(tomato.style.display ==="none"){
+  document.getElementById("Tomatoes").innerHTML = "Tomatoes.................20 Rs"
+document.getElementById("total").innerHTML = "Total = " +(Total = Total+20); 
+  document.getElementById("Payment").innerHTML = "Total = " +Total; 
+  }
   renderAll();
 };
 
@@ -113,11 +127,21 @@ document.querySelector(".btn-tomatoes").onclick = function () {
 // Trial 2 - Setup event listener for the onion button
 document.querySelector(".btn-onions").onclick = function () {
   state.Onions = !state.Onions;
+  if(onion.style.display ==="none"){
+  document.getElementById("Onions").innerHTML = "Onions................20 Rs"
+  document.getElementById("total").innerHTML = "Total = " +(Total = Total+20); 
+  document.getElementById("Payment").innerHTML = "Total = " +Total;
+  }
   renderAll();
 };
 // Trial 2 - Setup event listener for the lettuce button
 document.querySelector(".btn-lettuce").onclick = function () {
   state.Lettuce = !state.Lettuce;
+  if(lettuce.style.display ==="none"){
+  document.getElementById("Lettuce").innerHTML = "Lettuce.................40 Rs"
+  document.getElementById("total").innerHTML = "Total = " +(Total = Total+40); 
+  document.getElementById("Payment").innerHTML = "Total = " +Total;
+  }
   renderAll();
 };
 //Challenge 1 - Add/Remove the class active to the buttons based on state
